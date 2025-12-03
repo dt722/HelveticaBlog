@@ -23,6 +23,7 @@
           <a class="nav-link" onclick="openContact()">Contact</a>
         </nav>
       </div>
+      <div class="header-progress" id="scrollBar"></div>
     </header>
 
     <div class="container">
@@ -30,10 +31,36 @@
       <div class="main-column">
 
         <div class="hero-wrapper">
-          <h1 class="hero-title">Helvetica.</h1>
+          <h1 class="hero-title"><span>H</span><span>e</span><span>l</span><span>v</span><span>e</span><span>t</span><span>i</span><span>c</span><span>a</span><span>.</span></h1>
         </div>
-        
-        <div class="blog-post scroll-fade">
+
+<div class="tape-container">
+  <div class="tape-text">
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • 
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • 
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • 
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • 
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • 
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • 
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • 
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS •
+  </div>
+</div>
+
+<div class="tape-container tape-secondary">
+  <div class="tape-text scroll-reverse">
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • 
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • 
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • 
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • 
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • 
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • 
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • 
+    HELVETICA IS TIMELESS • HELVETICA IS TIMELESS • HELVETICA IS TIMELESS •
+  </div>
+</div>
+
+        <div class="blog-post scroll-fade" style="margin-top: 180px;">
           <h2>The Font That Changed How We See Things</h2>
           <p>If you’ve ever looked at a subway sign, a company logo, or even your phone screen, chances are you’ve seen Helvetica. At first, it might seem like just another font, but it’s actually kind of a big deal. Helvetica has been a huge part of design history and has helped shape how we see the world around us.</p>
           <p>It was created in 1957 by Swiss designer Max Miedinger, during a time when people were moving toward simpler, cleaner design. Helvetica’s neat, straight lines made it super popular with companies, governments, and designers who wanted something that felt modern and easy to read.</p>
@@ -135,25 +162,43 @@
 
   <div id="overlay" class="overlay fade"></div>
 
-  <div id="aboutBox" class="navbox fade">
-    <button id="closeAbout" class="nav-close">×</button>
-    <h2 class="about-title">About</h2>
-    <p class="about-text">
-      Built as part of a design course. Helvetica represents simplicity and function.
+<div id="aboutBox" class="navbox fade">
+  <button id="closeAbout" class="nav-close">&times;</button>
+  
+  <div class="navbox-content">
+    <h2 class="navbox-title">About<br>The Project.</h2>
+    <div class="navbox-line"></div>
+    
+    <p class="navbox-text">
+      This site is an exploration of the Helvetica. 
+      It pays tribute to the typeface that defined modern design.
     </p>
-    <p class="about-text">© 2025 Helvetica Blog</p>
-  </div>
+    <p class="navbox-text">
+      Built with a focus on negative space, grid systems, and functional typography.
+    </p>
 
-  <div id="contactBox" class="navbox fade">
-    <button id="closeContact" class="nav-close">×</button>
-    <h2 class="about-title">Contact</h2>
+    <div class="navbox-footer">
+      <span>Est. 2025</span>
+      <span>Educational Purpose</span>
+    </div>
+  </div>
+</div>
+
+<div id="contactBox" class="navbox fade">
+  <button id="closeContact" class="nav-close">&times;</button>
+  
+  <div class="navbox-content">
+    <h2 class="navbox-title">Get In<br>Touch.</h2>
+    <div class="navbox-line"></div>
+    
     <form action="#" class="contact-form">
-      <input type="text" placeholder="Name" class="form-box">
-      <input type="email" placeholder="Email" class="form-box">
-      <textarea placeholder="Message" class="form-box" style="height:100px"></textarea>
-      <input type="submit" value="Send" class="btn-submit">
+      <input type="text" placeholder="NAME" class="form-box">
+      <input type="email" placeholder="EMAIL" class="form-box">
+      <textarea placeholder="MESSAGE" class="form-box" style="height:100px; resize: none;"></textarea>
+      <input type="submit" value="Send Message" class="btn-submit">
     </form>
   </div>
+</div>
 
   <script src="script.js"></script>
 </body>
