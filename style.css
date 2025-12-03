@@ -1,16 +1,68 @@
+@font-face {
+  font-family: 'Helvetica Neue Custom';
+  src: url('fonts/HelveticaNeueThin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Custom';
+  src: url('fonts/HelveticaNeueLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Custom';
+  src: url('fonts/HelveticaNeueRoman.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Custom';
+  src: url('fonts/HelveticaNeueMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Custom';
+  src: url('fonts/HelveticaNeueBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue Custom';
+  src: url('fonts/HelveticaNeueBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
 body {
-  background-color: #1B1D1F;  
+  position: relative;
+  background-color: #1B1D1F;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
   color: #F2F2F2;         
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue Custom', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   margin: 0;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-h1 { font-weight: 700; letter-spacing: -1px; }
+h1 {
+  font-weight: 700; letter-spacing: -1px;
+}
 
 h2 {
   color: #FF5E00;   
@@ -24,25 +76,35 @@ p, li {
   line-height: 1.6;
   font-size: 18px;
   margin-bottom: 20px;
-  color: #d1d1d1;
+  color: #F2F2F2;
+  opacity: 0.9;
 }
 
 hr {
   border: 0;
   height: 1px;
-  background: #333;
-  margin: 80px 0;   
+  background: rgba(242, 242, 242, 0.5);
+  margin: 80px 0;
 }
 
 .header {
   background-color: #111;
-  border-bottom: 2px solid #FF5E00;
   padding: 20px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
+}
+
+.header-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;        
+  background: #FF5E00;
+  width: 0%;          
+  transition: width 0.1s ease-out; 
 }
 
 .header-container {
@@ -99,6 +161,7 @@ hr {
 }
 
 .hero-wrapper {
+  position: relative;
   height: 85vh; 
   display: flex;
   flex-direction: column;
@@ -108,12 +171,34 @@ hr {
 }
 
 .hero-title {
-  font-size: 20vw; 
-  color: #F2F2F2;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
   margin: 0;
-  letter-spacing: -8px; 
-  line-height: 1;
+  padding: 0;
+  font-size: 0; 
+  line-height: 0;
+  letter-spacing: -0.2vw; 
+  white-space: nowrap; 
   text-align: center;
+  z-index: 1; 
+}
+
+.hero-title span {
+  display: inline-block;
+  font-size: 18vw; 
+  line-height: 1;
+  font-weight: 900;
+  color: #F2F2F2;
+  transition: transform 0.2s ease, color 0.2s ease;
+  cursor: default;
+}
+
+.hero-title span:hover {
+  color: #FF5E00;       
+  transform: translateY(-20px);
 }
 
 .scroll-fade {
@@ -158,21 +243,21 @@ hr {
   filter: brightness(0) invert(1); 
   cursor: pointer; 
   transition: transform 0.2s, opacity 0.2s;
-  opacity: 0.8;
-}
-
-.brand-logo:hover { 
-  transform: scale(1.1); 
   opacity: 1;
 }
 
+.brand-logo:hover { 
+  transform: scale(1.1);
+}
+
 .quote-box, .font-pair-box {
-  background: #25272a;
-  border-left: 3px solid #FF5E00; 
+  background: rgba(37, 39, 42, 0.5);
+  border-left: 5px solid #FF5E00;
   padding: 25px;
   margin-bottom: 25px;
   border-radius: 2px;
   color: #F2F2F2;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .quote-text {
@@ -191,12 +276,11 @@ hr {
   letter-spacing: 0.5px;
 }
 
-.font-pair-box {
-  border-left: 10px solid #FF5E00;
+.font-pair-box, .quote-box {
   transition: transform 0.2s;
 }
 
-.font-pair-box:hover {
+.font-pair-box:hover, .quote-box:hover {
   transform: translateX(10px);
 }
 
@@ -258,6 +342,7 @@ hr {
   border-top: 1px solid #222;
   padding: 60px 0;
   margin-top: auto; 
+  z-index: 3;
 }
 
 .footer-content {
@@ -315,6 +400,8 @@ hr {
 }
 
 .page-full {
+    position: relative;
+  z-index: 2;
   animation: contentIn 1s ease forwards;
   animation-delay: 3s;
   opacity: 0;
@@ -336,6 +423,7 @@ hr {
   color: #FF5E00;
   font-weight: 400;
   font-size: 32px;
+  font-style: italic;
 }
 @keyframes titleFade {
   0% { opacity: 0; transform: translateY(10px); }
@@ -349,18 +437,86 @@ hr {
 }
 
 .overlay {
-  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.8); z-index: 900;
+  position: fixed; inset: 0; background: rgba(27, 29, 31, 0.9); z-index: 900;
+  backdrop-filter: blur(5px);
 }
+
 .navbox {
-  position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  background-color: #1B1D1F; border: 1px solid #FF5E00;
-  width: 90%; max-width: 400px; padding: 30px; z-index: 1000;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  width: 90%; 
+  max-width: 480px; 
+  padding: 50px 40px; 
+  z-index: 1000;
+  background-color: #1B1D1F; 
+  border: 1px solid #FF5E00; 
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6); 
 }
+
+.navbox-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbox-title {
+  font-family: 'Helvetica Neue Custom', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 42px;
+  line-height: 0.9;
+  letter-spacing: -1px;
+  color: #F2F2F2;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+}
+
+.navbox-line {
+  width: 60px;
+  height: 4px;
+  background: #FF5E00;
+  margin-bottom: 30px;
+}
+
+.navbox-text {
+  font-family: 'Helvetica Neue Custom', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.navbox-footer {
+  margin-top: 20px;
+  border-top: 1px solid #333;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 700;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 .nav-close {
-  position: absolute; top: 10px; right: 15px; background: none; border: none;
-  color: #FF5E00; font-size: 28px; cursor: pointer;
+  position: absolute; 
+  top: 20px; 
+  right: 25px; 
+  background: none; 
+  border: none;
+  color: #FF5E00; 
+  font-size: 40px; 
+  line-height: 0.5;
+  cursor: pointer;
+  transition: color 0.2s ease;
 }
+
+.nav-close:hover {
+  color: #fff;
+}
+
 .fade {
   opacity: 0; transition: opacity 0.3s ease; pointer-events: none;
 }
@@ -371,8 +527,8 @@ hr {
 .contact-form {
   display: grid;
   gap: 15px; 
-  margin-top: 10px;
 }
+
 .form-label {
   color: #FF5E00; 
   font-size: 14px;
@@ -382,24 +538,127 @@ hr {
   background: #121315;
   border: 1px solid #333;
   color: #fff;
-  padding: 12px;
+  padding: 15px;
   width: 100%; 
   box-sizing: border-box;
+  font-family: 'Helvetica Neue Custom', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 .form-box:focus { 
-  outline: 1px solid #FF5E00; 
+  outline: none;
+  border-color: #FF5E00; 
 }
 
 .btn-submit {
   background: #FF5E00;
-  color: #000; 
+  color: #1B1D1F; 
   border: none;
-  padding: 10px 20px;
-  font-weight: bold;
+  padding: 15px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 10px;
 }
 
 .btn-submit:hover {
-  background: #e05200; 
+  background: #fff; 
+}
+
+body::before {
+  content: "Helvetica"; 
+  position: absolute;      
+  bottom: 300px;              
+  left: 100px;  
+  font-family: 'Helvetica Neue Custom', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 18vw;         
+  font-weight: 900; 
+  line-height: 0.85;
+  color: rgba(255, 255, 255, 0.04); 
+  text-align: center;
+  text-transform: uppercase; 
+  z-index: 0;            
+  pointer-events: none;
+}
+
+::selection {
+  background: #FF5E00;
+  color: #1B1D1F;
+}
+
+.tape-container {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-4deg);
+  width: 100vw;       
+  margin: 0;          
+  padding: 15px 0;
+  background: #FF5E00;
+  color: #1B1D1F;
+  z-index: 10;        
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  pointer-events: none;
+  border-top: 2px solid rgba(242,242,242,0.4);
+  border-bottom: 2px solid rgba(242,242,242,0.4);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tape-text {
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: 2px;
+  display: inline-block;
+  animation: scrollText 90s linear infinite;
+}
+
+@keyframes scrollText {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.tape-secondary {
+  top: 21%; 
+  transform: translate(-50%, -50%) rotate(1deg); 
+  z-index: 9; 
+  color: #1B1D1F;
+}
+
+.scroll-reverse {
+  animation-direction: reverse;
+}
+
+.type-tester-container {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #FF5E00;
+  transition: border-color 0.3s ease;
+}
+
+.type-tester-container:focus-within {
+  border-bottom-color: #F2F2F2;
+}
+
+.type-tester-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #F2F2F2;
+  font-family: 'Helvetica Neue Custom', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 8vw;
+  line-height: 1.2;
+  padding: 20px 0;
+  outline: none;
+  text-transform: none; 
+}
+
+.type-tester-input::placeholder {
+  color: #333;
+  font-weight: 600;
+  font-style: bold;
 }
