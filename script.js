@@ -65,3 +65,14 @@ window.onload = function () {
   const hiddenElements = document.querySelectorAll(".scroll-fade");
   hiddenElements.forEach((el) => observer.observe(el));
 };
+
+window.onscroll = function() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  
+  let bar = document.getElementById("scrollBar");
+  if (bar) {
+    bar.style.width = scrolled + "%";
+  }
+};
