@@ -17,6 +17,7 @@
         <a class="nav-link" onclick="openContact()">Contact</a>
       </nav>
     </div>
+    <div class="header-progress" id="scrollBar"></div>
   </header>
     
   <div class="container">
@@ -52,16 +53,27 @@
       <p>Click the logos to see why they use Helvetica.</p>
 
       <div class="brand-row">
-        <img src="Logos/LogoJeep.png" class="brand-logo brand-click" data-text="Jeep uses Helvetica Bold. It's rugged and simple.">
-        <img src="Logos/LogoBMW.png" class="brand-logo brand-click" data-text="BMW uses Helvetica to show precision engineering.">
-        <img src="Logos/LogoTarget.png" class="brand-logo brand-click" data-text="Target uses it to look clean and approachable.">
-        <img src="Logos/LogoLufthansa.png" class="brand-logo brand-click" data-text="Lufthansa uses Helvetica Black for a professional, global image.">
-        <img src="Logos/LogoMotorola.png" class="brand-logo brand-click" data-text="Motorola uses it to look modern and tech-forward.">
-        <img src="Logos/LogoToyota.png" class="brand-logo brand-click" data-text="Toyota uses a font very similar to Helvetica for clarity.">
+        <img src="logos/LogoJeep.png" class="brand-logo brand-click" data-text="Jeep uses Helvetica Bold. It's rugged and simple.">
+        <img src="logos/LogoBMW.png" class="brand-logo brand-click" data-text="BMW uses Helvetica to show precision engineering.">
+        <img src="logos/LogoTarget.png" class="brand-logo brand-click" data-text="Target uses it to look clean and approachable.">
+        <img src="logos/LogoLufthansa.png" class="brand-logo brand-click" data-text="Lufthansa uses Helvetica Black for a professional, global image.">
+        <img src="logos/LogoMotorola.png" class="brand-logo brand-click" data-text="Motorola uses it to look modern and tech-forward.">
+        <img src="logos/LogoToyota.png" class="brand-logo brand-click" data-text="Toyota uses a font very similar to Helvetica for clarity.">
       </div>
     </div>
 
-    <hr style="width: 100%; max-width: 1000px;">
+        <hr style="width: 100%; max-width: 1000px;">
+
+    <div style="width: 100%; max-width: 1000px; padding: 0 20px;">
+      <h2>Type Tester</h2>
+      <p>Type anything below to see how it looks in Helvetica.</p>
+      
+      <div class="type-tester-container">
+        <input type="text" class="type-tester-input" placeholder="TYPE HERE...">
+      </div>
+    </div>
+
+        <hr style="width: 100%; max-width: 1000px;">
 
     <div style="width: 100%; max-width: 1000px; padding: 0 20px;">
       <h2>What People Say</h2>
@@ -117,7 +129,7 @@
             <p style="font-family: 'Times New Roman', serif; font-size: 16px; margin:0; line-height: 1.4;">
               "The quick brown fox jumps over the lazy dog."
             </p>
-            <p style="font-size: 13px; opacity: 0.6; margin: 15px 0 0 0;">+ Helvetica for contrast</p>
+            <p style="font-size: 14px; opacity: 0.8; margin: 5px 0 0 5px;">The quick brown fox jumps over the lazy dog.</p>
           </div>
 
           <div class="font-pair-box">
@@ -125,7 +137,7 @@
             <p style="font-family: 'Courier New', monospace; font-size: 16px; margin:0; line-height: 1.4;">
               "The quick brown fox jumps over the lazy dog."
             </p>
-            <p style="font-size: 13px; opacity: 0.6; margin: 15px 0 0 0;">+ Helvetica for contrast</p>
+            <p style="font-size: 14px; opacity: 0.8; margin: 5px 0 0 5px;">The quick brown fox jumps over the lazy dog.</p>
           </div>
         </div>
 
@@ -135,7 +147,7 @@
             <p style="font-family: Georgia, serif; font-size: 16px; margin:0; line-height: 1.4;">
               "The quick brown fox jumps over the lazy dog."
             </p>
-            <p style="font-size: 13px; opacity: 0.6; margin: 15px 0 0 0;">+ Helvetica for contrast</p>
+            <p style="font-size: 14px; opacity: 0.8; margin: 5px 0 0 5px;">The quick brown fox jumps over the lazy dog.</p>
           </div>
 
           <div class="font-pair-box">
@@ -143,13 +155,13 @@
             <p style="font-family: Arial, sans-serif; font-size: 16px; margin:0; line-height: 1.4;">
               "The quick brown fox jumps over the lazy dog."
             </p>
-            <p style="font-size: 13px; opacity: 0.6; margin: 15px 0 0 0;">+ Helvetica for contrast</p>
+            <p style="font-size: 14px; opacity: 0.8; margin: 5px 0 0 5px;">The quick brown fox jumps over the lazy dog.</p>
           </div>
         </div>
 
       </div>
     </div>
-
+  
   </div>
 
   <footer class="site-footer">
@@ -187,25 +199,43 @@
   
   <div id="overlay" class="overlay fade"></div>
 
-  <div id="aboutBox" class="navbox fade">
-    <button id="closeAbout" class="nav-close">×</button>
-    <h2 class="about-title">About</h2>
-    <p class="about-text">
-      Built as part of a design course. Helvetica represents simplicity and function.
+<div id="aboutBox" class="navbox fade">
+  <button id="closeAbout" class="nav-close">&times;</button>
+  
+  <div class="navbox-content">
+    <h2 class="navbox-title">About<br>The Project.</h2>
+    <div class="navbox-line"></div>
+    
+    <p class="navbox-text">
+      This site is an exploration of the Helvetica. 
+      It pays tribute to the typeface that defined modern design.
     </p>
-    <p class="about-text">© 2025 Helvetica Blog</p>
-  </div>
+    <p class="navbox-text">
+      Built with a focus on negative space, grid systems, and functional typography.
+    </p>
 
-  <div id="contactBox" class="navbox fade">
-    <button id="closeContact" class="nav-close">×</button>
-    <h2 class="about-title">Contact</h2>
+    <div class="navbox-footer">
+      <span>Est. 2025</span>
+      <span>Educational Purpose</span>
+    </div>
+  </div>
+</div>
+
+<div id="contactBox" class="navbox fade">
+  <button id="closeContact" class="nav-close">&times;</button>
+  
+  <div class="navbox-content">
+    <h2 class="navbox-title">Get In<br>Touch.</h2>
+    <div class="navbox-line"></div>
+    
     <form action="#" class="contact-form">
-      <input type="text" placeholder="Name" class="form-box">
-      <input type="email" placeholder="Email" class="form-box">
-      <textarea placeholder="Message" class="form-box" style="height:100px"></textarea>
-      <input type="submit" value="Send" class="btn-submit">
+      <input type="text" placeholder="NAME" class="form-box">
+      <input type="email" placeholder="EMAIL" class="form-box">
+      <textarea placeholder="MESSAGE" class="form-box" style="height:100px; resize: none;"></textarea>
+      <input type="submit" value="Send Message" class="btn-submit">
     </form>
   </div>
+</div>
 
   <script src="script.js"></script>
 </body>
