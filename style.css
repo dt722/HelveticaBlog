@@ -575,7 +575,7 @@ hr {
 body::before {
   content: "Helvetica"; 
   position: absolute;      
-  bottom: 300px;              
+  bottom: 270px;              
   left: 100px;  
   font-family: 'Helvetica Neue Custom', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 18vw;         
