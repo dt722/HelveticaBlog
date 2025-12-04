@@ -66,7 +66,7 @@ h1 {
 
 h2 {
   color: #FF5E00;   
-  font-weight: 900;
+  font-weight: 700;
   font-size: 28px;
   margin-bottom: 25px;
   letter-spacing: -0.5px;
@@ -95,16 +95,7 @@ hr {
   z-index: 1000;
   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
   backdrop-filter: blur(10px);
-}
-
-.header-progress {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 3px;        
-  background: #FF5E00;
-  width: 0%;          
-  transition: width 0.1s ease-out; 
+  border-bottom: 5px solid #FF5E00;
 }
 
 .header-container {
